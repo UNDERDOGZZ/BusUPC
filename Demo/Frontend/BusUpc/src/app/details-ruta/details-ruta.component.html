@@ -1,0 +1,13 @@
+<div *ngIf="ruta">
+    <div>
+        <label>Ruta Numero: </label>{{ruta.id}}
+    </div>
+  <div>
+    <label>Origen: </label>{{ruta.origen.nombre}}
+  </div>
+  <div>
+      <label>Destino: </label>{{ruta.destino.nombre}}
+  </div>
+
+  <span (click)='deleteRuta()'>Eliminar</span>
+</div>

@@ -63,7 +63,7 @@ public class RutasController {
 	}
 	
 	@ApiOperation("Obtener ruta por id")
-	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/search/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Ruta> fetchRuta(@PathVariable("id") Integer id) {
 
 		try {

@@ -1,0 +1,4 @@
+<h1>Lista de Rutas</h1>
+<div *ngFor="let ruta of rutas | async">
+  <app-details-ruta [ruta] = 'ruta'></app-details-ruta>
+</div>
