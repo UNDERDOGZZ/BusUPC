@@ -1,0 +1,20 @@
+div.form-group {
+    background-color: white(255, 251, 227);
+    color: black;
+    cursor: default;
+    padding: 18px;
+    width: 75%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+    margin-bottom:10px;
+}
+
+.boton {
+    margin-left: 82%;
+    margin-bottom: 10px;
+    background-color: lightblue;
+    margin: lightblue solid;
+}
