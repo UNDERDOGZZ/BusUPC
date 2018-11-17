@@ -1,0 +1,12 @@
+<h3>Registro de Preguntas</h3>
+<div>
+  <form (ngSubmit)="save()">
+    <div class="form-group">
+      <label for="text">Text</label>
+      <input type="text" class="form-control" id="text" required [(ngModel)]="pregunta.text" name="text">
+    </div>
+
+    <button type="submit" class="btn btn-success">Registro</button>
+    
+  </form>
+</div>

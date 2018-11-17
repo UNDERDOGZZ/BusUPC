@@ -1,0 +1,6 @@
+<div *ngIf="pregunta">
+  <div>
+   <button type="button" (click)="isOn=!isOn">{{pregunta.studentId.firstName}}<label>:</label>{{pregunta.text}}</button>
+  </div>
+  <app-respuesta-lista *ngIf="!isOn"></app-respuesta-lista>
+</div>
