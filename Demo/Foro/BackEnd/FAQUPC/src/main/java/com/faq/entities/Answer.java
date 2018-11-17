@@ -30,6 +30,10 @@ public class Answer {
 	@JoinColumn(name = "question_id", nullable = false)
 	private Question questionId;
 
+	@ManyToOne
+	@JoinColumn(name = "student_id", nullable = false)
+	private Student studentId;
+	
 	public int getId() {
 		return id;
 	}
@@ -60,6 +64,14 @@ public class Answer {
 
 	public void setQuestionId(Question questionId) {
 		this.questionId = questionId;
+	}
+
+	public Student getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(Student studentId) {
+		this.studentId = studentId;
 	}
  
 	

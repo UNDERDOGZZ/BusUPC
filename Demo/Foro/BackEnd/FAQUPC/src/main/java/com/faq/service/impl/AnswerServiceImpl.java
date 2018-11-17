@@ -56,4 +56,10 @@ public class AnswerServiceImpl implements AnswerService {
 	@Override
 	public void deleteAll() throws Exception{
 	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<Answer> fetchByQuestionID(int id) throws Exception {
+		return answerRepository.fetchByQuestionID(id);
+	}
 }

@@ -1,6 +1,7 @@
-<h1>dasd</h1>
-<div *ngIf="respuesta">
+<div *ngIf="respuesta" class="respuesta">
   <div>
-    <label>- </label>{{respuesta.id}}
+    {{respuesta.studentId.firstName}}: 
+    <br>
+    {{respuesta.response}}
   </div>
 </div>

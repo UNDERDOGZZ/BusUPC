@@ -1,5 +1,5 @@
 import { PreguntaService } from './../pregunta.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Pregunta } from '../model/pregunta';
 
@@ -10,7 +10,7 @@ import { Pregunta } from '../model/pregunta';
 })
 export class PreguntaListComponent implements OnInit {
 
-  preguntas:Pregunta[];
+  @Input() preguntas: Pregunta[];
 
   constructor(private preguntaService: PreguntaService) { }
 
@@ -19,7 +19,6 @@ export class PreguntaListComponent implements OnInit {
   }
 
   reloadData(){
-    this.preguntaService.getQuestionsListOrdered()
-    .subscribe(preguntas => this.preguntas = preguntas);
+
   }
 }

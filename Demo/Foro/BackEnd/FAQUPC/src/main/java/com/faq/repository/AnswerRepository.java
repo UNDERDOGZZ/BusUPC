@@ -11,7 +11,9 @@ import com.faq.entities.Answer;
 @Repository
 public interface AnswerRepository extends JpaRepository<Answer, Integer> {
 	
-	@Query("select a from Answer a order by a.rating desc")
+	@Query("select a from Answer a order by a.rating desc ")
 	List<Answer> fetchAllOrderByRating();
 	
+	@Query("select a from Answer a where a.questionId.id =?1 order by a.rating desc")
+	List<Answer> fetchByQuestionID(int id);
 }

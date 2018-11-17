@@ -28,4 +28,10 @@ export class PreguntaDetalleComponent implements OnInit {
       error => console.log(error));
   
   }
+
+  subirRating()
+  {
+    this.pregunta.rating=this.pregunta.rating+1;
+    this.preguntaService.updateQuestion(this.pregunta.id, this.pregunta);
+  }
 }

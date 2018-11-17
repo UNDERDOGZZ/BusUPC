@@ -36,4 +36,9 @@ export class RespuestaService {
   getRespuestasListOrdered():Observable<any>{
     return this.http.get(`${this.baseUrl}/ordered`);
   }
+
+  getRespuestasPorPregunta(id: number):Observable<any>{
+    return this.http.get(`${this.baseUrl}/question/${id}`);
+  }
+
 }

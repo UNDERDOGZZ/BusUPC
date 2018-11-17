@@ -20,7 +20,7 @@ export class PreguntaService {
     return this.http.post(`${this.baseUrl}`, question);
   }
 
-  updatePatient(id: number, value:any):
+  updateQuestion(id: number, value:any):
   Observable<Object>
   {
     return this.http.put(`${this.baseUrl}/${id}`, value);

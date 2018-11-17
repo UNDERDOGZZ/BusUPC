@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SearchPreguntaComponent } from 
-'./search-pregunta/search-pregunta.component';
+import { SearchRespuestaComponent } from 
+'./search-respuesta/search-respuesta.component';
 import { CreatePreguntaComponent } from 
 './create-pregunta/create-pregunta.component';
 import { PreguntaListComponent } from 
@@ -12,10 +12,6 @@ import { RespuestaListaComponent } from './respuesta-lista/respuesta-lista.compo
 
 const routes: Routes = [
     { path: '', redirectTo: 'customer', pathMatch: 'full' },
-    { path: 'list', component: PreguntaListComponent },
-    { path: 'new', component: CreatePreguntaComponent },
-    { path: 'search', component: SearchPreguntaComponent },
-    { path: 'answers', component: RespuestaListaComponent }
 ];
 
 @NgModule({

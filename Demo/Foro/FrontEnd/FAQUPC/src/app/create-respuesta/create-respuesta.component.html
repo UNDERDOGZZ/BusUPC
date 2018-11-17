@@ -1,3 +1,17 @@
-<p>
-  create-respuesta works!
-</p>
+<div>
+  <form (ngSubmit)="saveRespuesta()">
+    <div class="form-group">
+      <label for="text">Responde:</label>
+      <input type="text" class="form-control" id="text" required [(ngModel)]="respuesta.response" name="text">
+    </div>
+  </form>
+  <script>
+    var input = document.getElementById("myInput");
+    input.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("saveRespuesta()").click();
+        }
+    });
+    </script>
+</div>

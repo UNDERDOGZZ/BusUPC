@@ -47,12 +47,24 @@ public class AnswerController {
 		}
 	}
 	
-	@ApiOperation("Lista de preguntas ordenada")
+	@ApiOperation("Lista de respuestas ordenada")
 	@GetMapping(value = "/ordered", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Answer>> fetchAnswersOrdered() {
 		try {
 			List<Answer> answers = new ArrayList<>();
 			answers = answerService.fetchAllOrderByRating();
+			return new ResponseEntity<List<Answer>>(answers, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<List<Answer>>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@ApiOperation("Lista de respuesta por pregunta id")
+	@GetMapping(value = "/question/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Answer>> fetchAnswersByQuestionId(@PathVariable("id") Integer id) {
+		try {
+			List<Answer> answers = new ArrayList<>();
+			answers = answerService.fetchByQuestionID(id);
 			return new ResponseEntity<List<Answer>>(answers, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<List<Answer>>(HttpStatus.INTERNAL_SERVER_ERROR);
