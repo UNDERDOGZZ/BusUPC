@@ -29,39 +29,40 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/rutas")
-@Api(value="REST informacion de rutas")
+@Api(value = "REST informacion de rutas")
 public class RutasController {
 
 	@Autowired
 	private RutaService rutaService;
-	
+
 	@ApiOperation("Registro de rutas")
-	@PostMapping(consumes= MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> saveRuta(@Valid @RequestBody Ruta ruta)
-	{
+	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Object> saveRuta(@Valid @RequestBody Ruta ruta) {
 		try {
 			Ruta rut = new Ruta();
 			rut = rutaService.save(ruta);
-			URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(rut.getId()).toUri();
+			URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(rut.getId())
+					.toUri();
 			return ResponseEntity.created(location).build();
 		} catch (Exception e) {
 			// TODO: handle exception
 			return new ResponseEntity<Object>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		
+
 	}
+
 	@ApiOperation("Listado de rutas")
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Ruta>> fetchRutas(){
+	public ResponseEntity<List<Ruta>> fetchRutas() {
 		try {
 			List<Ruta> rutas = new ArrayList<>();
-			rutas= rutaService.findAll();
-			return new ResponseEntity<List<Ruta>>(rutas,HttpStatus.OK);
+			rutas = rutaService.findAll();
+			return new ResponseEntity<List<Ruta>>(rutas, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<List<Ruta>>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	@ApiOperation("Obtener ruta por id")
 	@GetMapping(value = "/search/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Ruta> fetchRuta(@PathVariable("id") Integer id) {
@@ -107,4 +108,18 @@ public class RutasController {
 		}
 
 	}
+
+	@ApiOperation("Obtener ruta por origen y destino")
+	@GetMapping(value = "/search/{origen}/{destino}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Ruta>> findRutaByOrigenAndDestino(@PathVariable("origen") String origen,@PathVariable("destino") String destino) {
+
+		try {
+			List<Ruta> rutas = new ArrayList<>();
+			rutas = rutaService.fetchByOrigenAndDestino(origen, destino);
+			return new ResponseEntity<List<Ruta>>(rutas, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<List<Ruta>>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+
 }

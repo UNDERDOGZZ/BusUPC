@@ -6,5 +6,5 @@ import com.bus.entities.Ruta;
 
 public interface RutaService extends CrudService<Ruta>{
 
-	List<Ruta> findByOrigenAndDestino(String origen, String destino)throws Exception;
+	List<Ruta> fetchByOrigenAndDestino(String origen, String destino) throws Exception;
 }

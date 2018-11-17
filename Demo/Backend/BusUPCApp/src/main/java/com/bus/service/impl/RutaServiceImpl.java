@@ -61,9 +61,9 @@ public class RutaServiceImpl implements RutaService{
 
 	@Transactional(readOnly=true)
 	@Override
-	public List<Ruta> findByOrigenAndDestino(String origen, String destino) throws Exception {
+	public List<Ruta> fetchByOrigenAndDestino(String origen, String destino) throws Exception {
 		// TODO Auto-generated method stub
-		return rutaRepository.findByOrigenAndDestino(origen, destino);
+		return rutaRepository.fetchByOrigenAndDestino(origen, destino);
 	}
 
 	
