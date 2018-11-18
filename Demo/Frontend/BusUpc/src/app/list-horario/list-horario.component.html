@@ -1,0 +1,6 @@
+<h1>Lista de Horarios</h1>
+
+<div *ngFor="let horario of horarios | async">
+  <app-details-horario [horario]='horario'></app-details-horario>
+</div>
+
