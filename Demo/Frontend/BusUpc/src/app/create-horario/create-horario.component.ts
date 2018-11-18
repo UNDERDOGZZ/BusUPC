@@ -11,5 +11,4 @@ export class CreateHorarioComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

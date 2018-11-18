@@ -17,4 +17,13 @@ export class DetailsRutaComponent implements OnInit {
   ngOnInit() {
   }
 
+  deleteRuta()
+  {
+    this.rutaService.deleteRuta(this.ruta.id)
+    .subscribe(
+      data=>{
+        this.listComponent.reloadData();
+      }
+    )
+  }
 }
