@@ -1,0 +1,4 @@
+<h1>Lista de Sedes</h1>
+<div *ngFor="let sede of sedes | async">
+  <app-details-sede [sede] = 'sede'></app-details-sede>
+</div>

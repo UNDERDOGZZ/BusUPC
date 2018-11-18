@@ -10,6 +10,6 @@ import com.bus.entities.Sede;
 @Repository
 public interface SedeRespository extends JpaRepository<Sede, Integer>{
 
-	List<Sede> findByName(String name);
+	List<Sede> findByNombre(String nombre);
 	
 }

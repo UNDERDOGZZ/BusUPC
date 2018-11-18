@@ -61,9 +61,9 @@ public class SedeServiceImpl implements SedeService {
 
 	@Transactional(readOnly=true)
 	@Override
-	public List<Sede> findByName(String name) throws Exception {
+	public List<Sede> findByNombre(String nombre) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return sedeRespository.findByNombre(nombre);
 	}
 
 	
