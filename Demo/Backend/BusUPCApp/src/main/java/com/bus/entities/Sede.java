@@ -15,8 +15,8 @@ public class Sede {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "name", nullable = false, length = 80)
-	private String name;
+	@Column(name = "nombre", nullable = false, length = 80)
+	private String nombre;
 
 	public int getId() {
 		return id;
@@ -26,12 +26,12 @@ public class Sede {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	
 	

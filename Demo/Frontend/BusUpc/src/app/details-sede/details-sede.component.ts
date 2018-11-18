@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Sede } from '../model/sede';
+import { SedeService } from '../sede.service';
+import { ListSedeComponent } from '../list-sede/list-sede.component';
 
 @Component({
   selector: 'app-details-sede',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsSedeComponent implements OnInit {
 
-  constructor() { }
+  @Input() sede: Sede;
+
+  constructor(private sedeService:SedeService, private listComponent:ListSedeComponent ) { }
 
   ngOnInit() {
   }

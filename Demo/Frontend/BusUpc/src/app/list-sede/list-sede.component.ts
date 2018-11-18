@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Sede } from '../model/sede';
+import { SedeService } from '../sede.service';
 
 @Component({
   selector: 'app-list-sede',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListSedeComponent implements OnInit {
 
-  constructor() { }
+  sedes: Observable<Sede[]>
+  constructor(private sedeService: SedeService) { }
 
   ngOnInit() {
+    this.reloadData();
+  }
+
+  reloadData()
+  {
+    this.sedes=this.sedeService.getSedeList();
   }
 
 }

@@ -10,11 +10,6 @@ export class RutaService {
 
   constructor(private http:HttpClient) { }
 
-  getRuta(id:number):Observable<object>
-  {
-    return this.http.get(`${this.baseURL}/${id}`);
-  }
-
   createRuta(ruta: Object):Observable<object>
   {
     return this.http.post(`${this.baseURL}`,ruta);
