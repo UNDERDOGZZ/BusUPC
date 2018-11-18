@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div *ngIf="pregunta">
+
+  <p class="accordion" (click)="isOn=!isOn">{{pregunta.studentId.firstName}}:
+  <br>
+  {{pregunta.text}}
+  </p>
+
+  <button class="btn" id="btn" (click)="subirRating()"><i class="fa fa-heart">                              {{pregunta.rating}}</i></button>
+
+  <button class="close" (click) = "deleteQuestion()"> <i class="fa fa-close" style="font-size:36px;color:red"></i></button>
+  <button class="edit" (click) = "deleteQuestion()"> <i class="fa fa-edit" style="font-size:36px"></i></button>
+  <app-respuesta-lista *ngIf="isOn" [pregunta]='pregunta'></app-respuesta-lista>
+  <app-create-respuesta *ngIf="isOn" [pregunta]='pregunta'></app-create-respuesta>
+</div>
+

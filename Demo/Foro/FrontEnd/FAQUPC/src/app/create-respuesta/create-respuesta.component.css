@@ -1,0 +1,13 @@
+div.form-group {
+    background-color: white(255, 251, 227);
+    color: black;
+    cursor: default;
+    padding: 18px;
+    width: 75%;
+    text-align: left;
+    border: none;
+    outline:lightcoral solid;
+    transition: 0.4s;
+    margin: auto;
+    margin-bottom:25px;
+}
