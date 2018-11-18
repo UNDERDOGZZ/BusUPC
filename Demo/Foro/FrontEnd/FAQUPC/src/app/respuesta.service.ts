@@ -40,5 +40,9 @@ export class RespuestaService {
   getRespuestasPorPregunta(id: number):Observable<any>{
     return this.http.get(`${this.baseUrl}/question/${id}`);
   }
-
+  deleteInBulk(id: number): Observable<any>
+  {
+    return this.http.delete(`${this.baseUrl}/question/${id}`, {responseType:
+      'text'});
+  }
 }

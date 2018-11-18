@@ -51,4 +51,10 @@ public class LikeAnswerServiceImpl implements LikeAnswerService {
 		// TODO Auto-generated method stub	
 	}
 
+	@Override
+	public Optional<LikeAnswer> fetchLikeByAnswersAndStudents(int ansId, int studId) throws Exception {
+		// TODO Auto-generated method stub
+		return likeRepository.fetchLikeByAnswersAndStudents(ansId, studId);
+	}
+
 }

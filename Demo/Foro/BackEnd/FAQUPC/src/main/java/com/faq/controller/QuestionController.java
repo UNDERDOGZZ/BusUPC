@@ -87,7 +87,7 @@ public class QuestionController {
 	}
 
 	@ApiOperation("Actualizar datos de preguntas")
-	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "/up/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> updateQuestion(@Valid @RequestBody Question question) {
 		try {
 			questionService.update(question);

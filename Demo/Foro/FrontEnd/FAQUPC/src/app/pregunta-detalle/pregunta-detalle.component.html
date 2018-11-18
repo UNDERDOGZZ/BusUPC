@@ -8,7 +8,9 @@
   </p>
 
   <button class="btn" id="btn" (click)="subirRating()"><i class="fa fa-heart">                              {{pregunta.rating}}</i></button>
-  
+
+  <button class="close" (click) = "deleteQuestion()"> <i class="fa fa-close" style="font-size:36px;color:red"></i></button>
+  <button class="edit" (click) = "deleteQuestion()"> <i class="fa fa-edit" style="font-size:36px"></i></button>
   <app-respuesta-lista *ngIf="isOn" [pregunta]='pregunta'></app-respuesta-lista>
   <app-create-respuesta *ngIf="isOn" [pregunta]='pregunta'></app-create-respuesta>
 </div>

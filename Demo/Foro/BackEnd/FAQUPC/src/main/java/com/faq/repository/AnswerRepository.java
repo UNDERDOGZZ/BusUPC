@@ -3,6 +3,7 @@ package com.faq.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -16,4 +17,9 @@ public interface AnswerRepository extends JpaRepository<Answer, Integer> {
 	
 	@Query("select a from Answer a where a.questionId.id =?1 order by a.rating desc")
 	List<Answer> fetchByQuestionID(int id);
+	
+
+	@Modifying
+	@Query("delete from Answer a where a.questionId.id = ?1")
+	void deleteInBulk(int id);
 }

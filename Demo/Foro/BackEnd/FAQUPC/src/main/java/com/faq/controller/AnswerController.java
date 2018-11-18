@@ -115,4 +115,15 @@ public class AnswerController {
 		}
 
 	}
+	
+	@ApiOperation("Eliminar todos las respuestas por id")
+	@DeleteMapping(value ="/question/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> deleteAllLikesById(@PathVariable("id") int id) {
+		try {
+			answerService.deleteInBulk(id);
+			return new ResponseEntity<>("Respuestas eliminados", HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 }

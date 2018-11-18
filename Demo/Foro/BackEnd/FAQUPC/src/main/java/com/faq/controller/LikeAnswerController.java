@@ -105,6 +105,20 @@ public class LikeAnswerController {
 		} catch (Exception e) {
 			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
+	}
+	
+	@ApiOperation("Obtener like por id de preguntas y estudiantes")
+	@GetMapping(value = "/answer/{ansId}/student/{studId}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<LikeAnswer> fetchLikeQuestionsById(@PathVariable("ansId") int ansId, @PathVariable("studId") int studId) {
 
+		try {
+			Optional<LikeAnswer> like = likeAnswerService.fetchLikeByAnswersAndStudents(ansId, studId);
+			if (!like.isPresent()) {
+				return new ResponseEntity<LikeAnswer>(HttpStatus.NOT_FOUND);
+			}
+			return new ResponseEntity<LikeAnswer>(like.get(), HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<LikeAnswer>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 }

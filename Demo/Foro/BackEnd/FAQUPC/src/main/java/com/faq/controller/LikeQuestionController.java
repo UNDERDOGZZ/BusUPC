@@ -37,7 +37,7 @@ public class LikeQuestionController {
 
 	@ApiOperation("Lista de likes de preguntas")
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<LikeQuestion>> fetchStudents() {
+	public ResponseEntity<List<LikeQuestion>> fetchLikeQuestions() {
 		try {
 			List<LikeQuestion> likes = new ArrayList<>();
 			likes = likeQuestionService.findAll();
@@ -49,7 +49,7 @@ public class LikeQuestionController {
 
 	@ApiOperation("Obtener like por id de preguntas")
 	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<LikeQuestion> fetchStudent(@PathVariable("id") Integer id) {
+	public ResponseEntity<LikeQuestion> fetchLikeQuestion(@PathVariable("id") Integer id) {
 
 		try {
 			Optional<LikeQuestion> like = likeQuestionService.findById(id);
@@ -100,11 +100,37 @@ public class LikeQuestionController {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			} else {
 				likeQuestionService.deleteById(id);
-				return new ResponseEntity<>("Signo se elimino", HttpStatus.OK);
+				return new ResponseEntity<>("Like se elimino", HttpStatus.OK);
 			}
 		} catch (Exception e) {
 			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
+	}
+	
+	@ApiOperation("Obtener like por id de preguntas y estudiantes")
+	@GetMapping(value = "/question/{questId}/student/{studId}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<LikeQuestion> fetchLikeQuestionsById(@PathVariable("questId") int questId,@PathVariable("studId") int studId) {
+
+		try {
+			Optional<LikeQuestion> like = likeQuestionService.fetchLikeByQuestionsAndStudents(questId, studId);
+			if (!like.isPresent()) {
+				return new ResponseEntity<LikeQuestion>(HttpStatus.NOT_FOUND);
+			}
+			return new ResponseEntity<LikeQuestion>(like.get(), HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<LikeQuestion>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@ApiOperation("Eliminar todos los liks por id")
+	@DeleteMapping(value ="/question/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> deleteAllLikesById(@PathVariable("id") int id) {
+		try {
+			likeQuestionService.deleteInBulk(id);
+			return new ResponseEntity<>("Likes eliminados", HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 }

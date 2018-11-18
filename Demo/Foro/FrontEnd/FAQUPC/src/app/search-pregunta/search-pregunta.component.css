@@ -14,7 +14,7 @@ div.form-group {
 
 .button {
     margin-left: 10%;
-    margin-bottom:10px;
+    margin-bottom:1%;
     background-color: lightblue;
     margin: lightblue solid;
 }
@@ -27,8 +27,8 @@ div.form-group {
 {
     margin-left: 84%;
     margin-top: -35px;
-    background-color: skyblue;
-    width: 30px;
+    background-color: rgb(66,103,178);
+    width: 20px;
     height: 20px;
     text-align: center;
 }
@@ -36,4 +36,6 @@ div.form-group {
 .letra
 {
     color:white;
+    font-style: Segoe UI;
+    font-size: 17px;
 }

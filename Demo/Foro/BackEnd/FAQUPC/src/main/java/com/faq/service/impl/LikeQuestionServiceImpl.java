@@ -51,4 +51,17 @@ public class LikeQuestionServiceImpl implements LikeQuestionService {
 		// TODO Auto-generated method stub	
 	}
 
+	@Transactional(readOnly = true)
+	@Override
+	public Optional<LikeQuestion> fetchLikeByQuestionsAndStudents(int questId, int studId) throws Exception {
+		// TODO Auto-generated method stub
+		return likeRepository.fetchLikeByQuestionsAndStudents(questId, studId);
+	}
+
+	@Transactional
+	@Override
+	public void deleteInBulk(int id) throws Exception {
+		likeRepository.deleteInBulk(id);
+	}
+
 }

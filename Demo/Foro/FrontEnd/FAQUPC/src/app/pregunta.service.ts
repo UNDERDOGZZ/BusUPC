@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { Pregunta } from './model/pregunta';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,10 +20,10 @@ export class PreguntaService {
     return this.http.post(`${this.baseUrl}`, question);
   }
 
-  updateQuestion(id: number, value:any):
+  updateQuestion(id: number, value:Pregunta):
   Observable<Object>
   {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+    return this.http.put(`${this.baseUrl}/up/${id}`, value);
   }
 
   deleteQuestion(id: number): Observable<any>
@@ -43,4 +43,6 @@ export class PreguntaService {
   getQuestionsListOrdered():Observable<any>{
     return this.http.get(`${this.baseUrl}/ordered`);
   }
+
+ 
 }
