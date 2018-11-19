@@ -17,4 +17,11 @@ export class DetailsSedeComponent implements OnInit {
   ngOnInit() {
   }
 
+  deleteSede()
+  {
+    this.sedeService.deleteSede(this.sede.id).subscribe
+    (data=>{
+        this.listComponent.reloadData();
+    })
+  }
 }
