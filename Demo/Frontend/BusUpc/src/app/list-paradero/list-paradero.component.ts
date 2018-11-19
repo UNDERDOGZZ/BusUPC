@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class ListParaderoComponent implements OnInit {
 
   paraderos:Observable<Paradero[]>;
+  paradero:Paradero = new Paradero;
 
   constructor(private paraderoService:ParaderoService) { }
 

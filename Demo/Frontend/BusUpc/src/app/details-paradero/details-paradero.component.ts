@@ -12,10 +12,13 @@ export class DetailsParaderoComponent implements OnInit {
 
   @Input() paradero:Paradero;
 
-  constructor(private paraderoService:ParaderoService, 
-    private listComponent:ListParaderoComponent) { }
+  constructor(private paraderoService:ParaderoService, private listComponent:ListParaderoComponent) { }
 
   ngOnInit() {
   }
 
+  deleteParadero(){
+    this.paraderoService.deleteParadero(this.paradero.id)
+    .subscribe(data=>{this.listComponent.reloadData()});
+  }
 }
