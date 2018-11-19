@@ -1,0 +1,9 @@
+<div> 
+  <form (ngSubmit)="editRespuesta()">
+    <div class="form-group">
+      <label for="texto">Respuesta {{respuesta.id}}: </label>
+      <input type="texto" class="form-control" id="response" required [(ngModel)]="respuesta.texto" name="texto" placeholder="{{respuesta.texto}}">
+    </div>
+    <button type="submit" class="boton">Editar</button>
+  </form>
+</div>
