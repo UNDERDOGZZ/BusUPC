@@ -14,22 +14,24 @@ div.form-group {
 
 .button {
     margin-left: 10%;
-    margin-bottom:1%;
-    background-color: lightblue;
-    margin: lightblue solid;
+    margin-bottom:0.5%;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+  
 }
 .share
 {
-    margin-left: 70%;
+    margin-left: 83%;
+
 }
 
 .fbshare
 {
-    margin-left: 84%;
-    margin-top: -35px;
+    margin-left: 75%;
+    margin-top: -6%;
     background-color: rgb(66,103,178);
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     text-align: center;
 }
 
@@ -37,5 +39,12 @@ div.form-group {
 {
     color:white;
     font-style: Segoe UI;
-    font-size: 17px;
+    font-size: 30px;
+}
+
+.contener
+{
+    outline:black solid;
+    padding-bottom: 100px;
+    padding-top: 80px;
 }

@@ -1,10 +1,18 @@
+<br>
 <div>
   <form (ngSubmit)="save()">
     <div class="form-group">
       <label for="texto">Pregunta:</label>
       <input type="texto" class="form-control" id="texto" required [(ngModel)]="pregunta.texto" name="texto" placeholder="¿Preguntas?">
-    </div>
-    <button type="submit" class="boton">Registro</button>
-    
+    </div>    
   </form>
+  <script>
+    var input = document.getElementById("myInput");
+    input.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("searchPatient()").click();
+        }
+    });
+    </script>
 </div>
