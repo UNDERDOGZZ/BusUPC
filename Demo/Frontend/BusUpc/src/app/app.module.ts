@@ -29,6 +29,8 @@ import { RespuestaListaComponent } from './respuesta-lista/respuesta-lista.compo
 import { SearchRespuestaComponent } from './search-respuesta/search-respuesta.component';
 import { EditPreguntaComponent } from './edit-pregunta/edit-pregunta.component';
 import { EditRespuestaComponent } from './edit-respuesta/edit-respuesta.component';
+import { ListParaderoComponent } from './list-paradero/list-paradero.component';
+import { DetailsParaderoComponent } from './details-paradero/details-paradero.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { EditRespuestaComponent } from './edit-respuesta/edit-respuesta.componen
     RespuestaListaComponent,
     SearchRespuestaComponent,
     EditPreguntaComponent,
-    EditRespuestaComponent
+    EditRespuestaComponent,
+    ListParaderoComponent,
+    DetailsParaderoComponent
 
   ],
   imports: [

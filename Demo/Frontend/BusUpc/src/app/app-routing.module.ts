@@ -9,6 +9,7 @@ import { SearchHorariosComponent } from './search-horarios/search-horarios.compo
 import { CreateHorarioComponent } from './create-horario/create-horario.component';
 import { ListHorarioComponent } from './list-horario/list-horario.component';
 import { SearchPreguntaComponent } from './search-pregunta/search-pregunta.component';
+import { ListParaderoComponent } from './list-paradero/list-paradero.component';
 
 
 
@@ -25,6 +26,9 @@ const routes: Routes = [
   {path: 'newHorario', component: CreateHorarioComponent},
   {path: 'listHorario', component: ListHorarioComponent},
   {path: 'findHorario', component: SearchHorariosComponent},
+
+  {path: 'listParaderos', component: ListParaderoComponent},
+
 
   {path: 'faq', component: SearchPreguntaComponent}
   
