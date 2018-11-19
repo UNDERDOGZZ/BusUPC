@@ -1,3 +1,32 @@
-<p>
-  search-ruta works!
-</p>
+<div>
+    <form (ngSubmit)="searchRuta()">
+      <div class="form-group" style=" padding: 10px; margin: 5px;   display: flex;    justify-content: center;
+        border-style: solid; border-width: 4px; border-color: #333;">
+  
+        <div style="display: inline-block;
+          margin: 5px; padding: 2px;">
+          <span style="display: block; color: #333"><strong>Origen:</strong></span>
+          <input type="text" class="form-control" placeholder="Ingresar origen" id="origen" required [(ngModel)]="origen" name="origen">
+        </div>
+
+
+        <div style="display: inline-block;
+        margin: 5px; padding: 2px;">
+        <span style="display: block; color: #333"><strong>Destino:</strong></span>
+        <input type="text" class="form-control" placeholder="Ingresar destino" id="destino" required [(ngModel)]="destino" name="destino">
+      </div>
+  
+        <div style="display: inline-block;
+          margin: 5px; padding: 2px;">
+          <span style="display: block; color: #333"><strong>Buscar:</strong></span>
+          <button type="submit" class="btn btn-danger">Buscar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  <ul>
+    <li *ngFor="let ruta of rutas">
+      <h4>{{ruta.id}} - {{ruta.origen.nombre}} - {{ruta.destino.nombre}}</h4>
+    </li>
+  </ul>

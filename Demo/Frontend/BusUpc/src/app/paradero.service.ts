@@ -11,7 +11,7 @@ export class ParaderoService {
   
   constructor(private http:HttpClient) { }
 
-  getParadero(id:number):Observable<Object>{
+  getParaderoById(id:number):Observable<Object>{
     return this.http.get(`${this.baseUrl}/${id}`)
   }
 

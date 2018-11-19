@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SedeService } from '../sede.service';
+import { Sede } from '../model/sede';
 
 @Component({
   selector: 'app-search-sede',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchSedeComponent implements OnInit {
 
-  constructor() { }
+  nombre: string;
+  sedes:Sede[];
+  constructor(private sedeService: SedeService) { }
 
   ngOnInit() {
+  }
+
+  searchSede(){
+    this.sedeService.getSedeBySede(this.nombre).subscribe
+    (sedes=>this.sedes=sedes);
   }
 
 }

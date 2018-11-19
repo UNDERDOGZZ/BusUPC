@@ -81,17 +81,18 @@ public class SedeController {
 	}
 	
 	@ApiOperation("Obtener sede por nombre")
-	@GetMapping(value = "{nombre}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Sede>> fetchSede(@PathVariable("nombre") String nombre) {
-
+	@GetMapping(value = "/search/{nombre}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Sede>> fetchPatientByDni(@PathVariable("nombre") String nombre) {
 		try {
 			List<Sede> sedes = new ArrayList<>();
-			sedes= sedeService.findByNombre(nombre);
-			return new ResponseEntity<List<Sede>>(sedes,HttpStatus.OK);
+			sedes = sedeService.findByNombre(nombre);
+			return new ResponseEntity<List<Sede>>(sedes, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<List<Sede>>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+
 
 	@ApiOperation("Actualizar sede")
 	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

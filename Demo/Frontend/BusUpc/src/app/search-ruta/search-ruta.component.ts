@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Ruta } from '../model/ruta';
+import { RutaService } from '../ruta.service';
 
 @Component({
   selector: 'app-search-ruta',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchRutaComponent implements OnInit {
 
-  constructor() { }
+  origen: string;
+  destino: string;
+  rutas: Ruta[];
+  constructor(private rutaService: RutaService) { }
 
   ngOnInit() {
+  }
+
+  searchRuta(){
+    this.rutaService.getRutaByOrigenAndDestino(this.origen,this.destino).subscribe
+    (rutas=>this.rutas=rutas);
   }
 
 }
