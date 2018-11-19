@@ -1,0 +1,41 @@
+div.form-group {
+    background-color: lightcoral;
+    color: white;
+    cursor: default;
+    padding: 18px;
+    width: 80%;
+    text-align: left;
+    border: none;
+    outline:none;
+    transition: 0.4s;
+    margin: auto;
+    margin-bottom:25px;
+}
+
+.button {
+    margin-left: 10%;
+    margin-bottom:1%;
+    background-color: lightblue;
+    margin: lightblue solid;
+}
+.share
+{
+    margin-left: 70%;
+}
+
+.fbshare
+{
+    margin-left: 84%;
+    margin-top: -35px;
+    background-color: rgb(66,103,178);
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+.letra
+{
+    color:white;
+    font-style: Segoe UI;
+    font-size: 17px;
+}

@@ -7,11 +7,11 @@ import { CreatePreguntaComponent } from
 './create-pregunta/create-pregunta.component';
 import { PreguntaListComponent } from 
 './pregunta-list/pregunta-list.component';
-import { RespuestaListaComponent } from './respuesta-lista/respuesta-lista.component';
+import { EditPreguntaComponent } from './edit-pregunta/edit-pregunta.component';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: 'customer', pathMatch: 'full' },
+    { path: '', redirectTo: 'customer', pathMatch: 'full' }
 ];
 
 @NgModule({

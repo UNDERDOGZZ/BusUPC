@@ -15,6 +15,8 @@ import { CreateRespuestaComponent } from './create-respuesta/create-respuesta.co
 import { RespuestaDetalleComponent } from './respuesta-detalle/respuesta-detalle.component';
 import { RespuestaListaComponent } from './respuesta-lista/respuesta-lista.component';
 import { SearchRespuestaComponent } from './search-respuesta/search-respuesta.component';
+import { EditPreguntaComponent } from './edit-pregunta/edit-pregunta.component';
+import { EditRespuestaComponent } from './edit-respuesta/edit-respuesta.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { SearchRespuestaComponent } from './search-respuesta/search-respuesta.co
     CreateRespuestaComponent,
     RespuestaDetalleComponent,
     RespuestaListaComponent,
-    SearchRespuestaComponent
+    SearchRespuestaComponent,
+    EditPreguntaComponent,
+    EditRespuestaComponent
   ],
   imports: [
     BrowserModule,
