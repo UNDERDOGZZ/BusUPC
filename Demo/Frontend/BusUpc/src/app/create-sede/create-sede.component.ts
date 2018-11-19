@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Sede } from '../model/sede';
+import { SedeService } from '../sede.service';
 
 @Component({
   selector: 'app-create-sede',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateSedeComponent implements OnInit {
 
-  constructor() { }
+  sede:Sede = new Sede();
+
+  constructor(private sedeService: SedeService) { }
 
   ngOnInit() {
+  }
+
+  save()
+  {
+    this.sedeService.createSede(this.sede)
+    .subscribe
+    (data=>console.log(data),error=>console.log(error));
+  }
+
+  onSumit()
+  {
+    this.save();
   }
 
 }

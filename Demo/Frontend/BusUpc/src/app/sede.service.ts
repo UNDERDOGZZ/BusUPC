@@ -35,9 +35,9 @@ export class SedeService {
     return this.http.get(`${this.baseURL}`);
   }
 
-  getSedeById(id:number):Observable<any>
+  getSedeBySede(sede:string):Observable<any>
   {
-    return this.http.get(`${this.baseURL}/search/${id}`);
+    return this.http.get(`${this.baseURL}/${sede}`);
   }
 
   deleteAll():Observable<any>
