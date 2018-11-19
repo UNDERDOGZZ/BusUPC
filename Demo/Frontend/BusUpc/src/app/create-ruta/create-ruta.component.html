@@ -3,13 +3,14 @@
   <form (ngSubmit)="save()">
     <div class="form-group">
       <label for="Origen">Origen</label>
-      <input type="text" class="form-control" id="Origen" required [(ngModel)]="ruta.origen" name="Origen">
+      <input type="text" class="form-control" id="Origen" required [(ngModel)]="ruta.origen.nombre" name="Origen">
     </div>
 
     <div class="form-group">
       <label for="Destino">Destino</label>
-      <input type="text" class="form-control" id="Destino" required [(ngModel)]="ruta.destino" name="Destino">
+      <input type="text" class="form-control" id="Destino" required [(ngModel)]="ruta.destino.nombre" name="Destino">
     </div>
     <button type="submit" class="btn btn-success">Registro</button>
+
   </form>
 </div>
