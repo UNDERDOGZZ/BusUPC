@@ -1,0 +1,5 @@
+<h1>Lista de Paraderos</h1>
+
+<div *ngFor="let paradero of paraderos | async">
+  <app-details-paradero [paradero]='paradero'></app-details-paradero>
+</div>

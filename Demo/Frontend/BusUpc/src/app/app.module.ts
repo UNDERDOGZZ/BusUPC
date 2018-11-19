@@ -17,6 +17,9 @@ import { DetailsHorarioComponent } from './details-horario/details-horario.compo
 import { ListHorarioComponent } from './list-horario/list-horario.component';
 import { SearchHorariosComponent } from './search-horarios/search-horarios.component';
 import { CreateHorarioComponent } from './create-horario/create-horario.component';
+import { ListParaderoComponent } from './list-paradero/list-paradero.component';
+import { CreateParaderoComponent } from './create-paradero/create-paradero.component';
+import { DetailsParaderoComponent } from './details-paradero/details-paradero.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,10 @@ import { CreateHorarioComponent } from './create-horario/create-horario.componen
     DetailsHorarioComponent,
     ListHorarioComponent,
     SearchHorariosComponent,
-    CreateHorarioComponent
+    CreateHorarioComponent,
+    ListParaderoComponent,
+    CreateParaderoComponent,
+    DetailsParaderoComponent
 
 
   ],
