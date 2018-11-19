@@ -1,0 +1,14 @@
+<div *ngIf="respuesta" class="respuesta">
+  <div>
+    {{respuesta.clienteId.nombre}} {{respuesta.clienteId.apellido}}: : 
+    <br>
+    {{respuesta.texto}}
+  
+  <div class="btn-group">
+    <button class="btn" id="btn" (click)="subirRating()"><i class="fa fa-heart" style="font-size:12px">                        {{respuesta.rating}}</i></button>
+    <button class="edit" (click) = "editarOn()"> <i class="fa fa-edit" style="color:black" ></i></button>
+    <button class="delete" (click)="deleteRespuesta()"> <i class="fa fa-close" style="color:black"></i></button>
+  </div>
+</div>
+<app-edit-respuesta *ngIf="editar" [respuesta]='respuesta'> </app-edit-respuesta>
+</div>

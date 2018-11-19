@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div *ngIf="pregunta">
+
+  <p class="accordion" (click)="isOn=!isOn">{{pregunta.clienteId.nombre}} {{pregunta.clienteId.apellido}}:
+  <br>
+  {{pregunta.texto}}
+  </p>
+<div class="btn-group">
+  <button class="btn" id="btn" (click)="subirRating()"><i class="fa fa-heart">                              {{pregunta.rating}}</i></button>
+  <button class="edit" (click) = "editOnfunction()"> <i class="fa fa-edit" style="color:black" ></i></button>
+  <button class="delete" (click)="deleteQuestion()"> <i class="fa fa-close" style="color:red"></i></button>
+</div>
+  <app-edit-pregunta *ngIf="editOn" [pregunta]='pregunta'> </app-edit-pregunta>
+  <app-respuesta-lista *ngIf="isOn" [pregunta]='pregunta'></app-respuesta-lista>
+  <app-create-respuesta *ngIf="isOn" [pregunta]='pregunta'></app-create-respuesta>
+</div>
+
