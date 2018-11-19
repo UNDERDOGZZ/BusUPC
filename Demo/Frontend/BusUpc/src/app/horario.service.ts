@@ -10,10 +10,6 @@ export class HorarioService {
 
   constructor(private http:HttpClient) { }
 
-  getHorario(id:number):Observable<object>
-  {
-    return this.http.get(`${this.baseURL}/${id}`);
-  }
 
   createHorario(horario: Object):Observable<object>
   {

@@ -11,7 +11,7 @@ import { HorarioService } from '../horario.service';
 export class ListHorarioComponent implements OnInit {
 
   horarios: Observable<Horario[]>
-  
+  horario:Horario=new Horario;
   constructor( private horarioService: HorarioService) { }
 
   ngOnInit() {
@@ -21,6 +21,11 @@ export class ListHorarioComponent implements OnInit {
 
   reloadData(){
     this.horarios=this.horarioService.getHorariosList();
+  }
+
+  conseguirRutaId(id:number){
+    this.horarioService.getHorarioById(id).subscribe(data=>this.horario=data);
+
   }
 
 

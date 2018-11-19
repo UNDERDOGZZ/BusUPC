@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Horario } from '../model/horario';
+import { HorarioService } from '../horario.service';
 
 @Component({
   selector: 'app-search-horarios',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchHorariosComponent implements OnInit {
 
-  constructor() { }
+  id:number;
+  horarios:Horario[];
+  constructor(private horarioService: HorarioService) { }
 
   ngOnInit() {
+  }
+
+  searchHorario(){
+    this.horarioService.getHorarioById(this.id)
+    .subscribe(horarios=>this.horarios=horarios);
   }
 
 }

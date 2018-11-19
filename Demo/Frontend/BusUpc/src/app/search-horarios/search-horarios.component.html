@@ -1,3 +1,25 @@
-<p>
-  search-horarios works!
-</p>
+<div>
+  <form (ngSubmit)="searchHorario()">
+    <div class="form-group" style=" padding: 10px; margin: 5px;   display: flex;    justify-content: center;
+      border-style: solid; border-width: 4px; border-color: #333;">
+
+      <div style="display: inline-block;
+        margin: 5px; padding: 2px;">
+        <span style="display: block; color: #333"><strong>Horario: </strong></span>
+        <input type="text" class="form-control" placeholder="Ingresar id de horario" id="id" required [(ngModel)]="id" name="id">
+      </div>
+
+      <div style="display: inline-block;
+        margin: 5px; padding: 2px;">
+        <span style="display: block; color: #333"><strong>Buscar:</strong></span>
+        <button type="submit" class="btn btn-danger">Buscar</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<ul>
+  <li *ngFor="let horario of horarios">
+    <h4>{{horario.id}} - {{horario.dia}} - {{horario.hora}} - {{horario.minuto}} - {{horario.rutaId.id}}</h4>
+  </li>
+</ul>

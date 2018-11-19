@@ -68,7 +68,7 @@ public class HorarioController {
 	}
 	
 	@ApiOperation("Obtener horario por id")
-	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/search/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Horario> fetchHorario(@PathVariable("id") Integer id) {
 
 		try {
