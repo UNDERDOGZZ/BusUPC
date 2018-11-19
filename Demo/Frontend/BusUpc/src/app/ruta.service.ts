@@ -36,6 +36,11 @@ export class RutaService {
     return this.http.get(`${this.baseURL}/search/${id}`);
   }
 
+  getRutaByOrigenAndDestino(origen:String, destino:String):Observable<any>
+  {
+    return this.http.get(`${this.baseURL}/search/${origen}/${destino}`);
+  }
+
   deleteAll():Observable<any>
   {
     return this.http.delete(`${this.baseURL}`,{responseType: 'text'});
