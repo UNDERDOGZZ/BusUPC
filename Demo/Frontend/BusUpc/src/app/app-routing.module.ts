@@ -5,6 +5,11 @@ import { ListRutaComponent } from './list-ruta/list-ruta.component';
 import { SearchRutaComponent } from './search-ruta/search-ruta.component';
 import { CreateSedeComponent } from './create-sede/create-sede.component';
 import { ListSedeComponent } from './list-sede/list-sede.component';
+import { SearchHorariosComponent } from './search-horarios/search-horarios.component';
+import { CreateHorarioComponent } from './create-horario/create-horario.component';
+import { ListHorarioComponent } from './list-horario/list-horario.component';
+
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'customer', pathMatch: 'full'},
@@ -14,8 +19,13 @@ const routes: Routes = [
 
   {path: 'newSede', component: CreateSedeComponent},
   {path: 'listSede', component: ListSedeComponent},
-  {path: 'findSede', component: SearchRutaComponent}
+  {path: 'findSede', component: SearchRutaComponent},
 
+  {path: 'newHorario', component: CreateHorarioComponent},
+  {path: 'listHorario', component: ListHorarioComponent},
+  {path: 'findHorario', component: SearchHorariosComponent}
+
+  
 ];
 
 @NgModule({

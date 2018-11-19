@@ -1,43 +1,44 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
-export class SedeService {
-  private baseURL ="http://localhost:8080/sedes";
+export class HorarioService {
+
+  private baseURL="http://localhost:8080/horarios";
 
   constructor(private http:HttpClient) { }
 
-  getSede(id:number):Observable<object>
+  getHorario(id:number):Observable<object>
   {
     return this.http.get(`${this.baseURL}/${id}`);
   }
 
-  createSede(sede:Object): Observable<object>
+  createHorario(horario: Object):Observable<object>
   {
-    return this.http.post(`${this.baseURL}`,sede);
+    return this.http.post(`${this.baseURL}`,horario);
   }
 
-  updateSede(id: number, value:any): Observable<object>
+  updateHorario(id: number,value:any):Observable<object>
   {
     return this.http.put(`${this.baseURL}/${id}`,value);
   }
 
-  deleteSede(id:number):Observable<any>
+
+  deleteHorario(id:number):Observable<any>
   {
     return this.http.delete(`${this.baseURL}/${id}`,{responseType: 'text'});
   }
 
-  getSedeList():Observable<any>
+  getHorariosList():Observable<any>
   {
     return this.http.get(`${this.baseURL}`);
   }
 
-  getSedeBySede(sede:string):Observable<any>
+  getHorarioById(id:number):Observable<any>
   {
-    return this.http.get(`${this.baseURL}/${sede}`);
+    return this.http.get(`${this.baseURL}/search/${id}`);
   }
 
   deleteAll():Observable<any>

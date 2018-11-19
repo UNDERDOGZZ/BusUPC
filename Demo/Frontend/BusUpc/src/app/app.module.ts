@@ -13,6 +13,10 @@ import { CreateSedeComponent } from './create-sede/create-sede.component';
 import { DetailsSedeComponent } from './details-sede/details-sede.component';
 import { ListSedeComponent } from './list-sede/list-sede.component';
 import { SearchSedeComponent } from './search-sede/search-sede.component';
+import { DetailsHorarioComponent } from './details-horario/details-horario.component';
+import { ListHorarioComponent } from './list-horario/list-horario.component';
+import { SearchHorariosComponent } from './search-horarios/search-horarios.component';
+import { CreateHorarioComponent } from './create-horario/create-horario.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,13 @@ import { SearchSedeComponent } from './search-sede/search-sede.component';
     CreateSedeComponent,
     DetailsSedeComponent,
     ListSedeComponent,
-    SearchSedeComponent
+    SearchSedeComponent,
+    DetailsHorarioComponent,
+    ListHorarioComponent,
+    SearchHorariosComponent,
+    CreateHorarioComponent
+
+
   ],
   imports: [
     BrowserModule,
