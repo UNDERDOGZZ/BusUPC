@@ -23,4 +23,5 @@ export class ListHorarioComponent implements OnInit {
     this.horarios=this.horarioService.getHorariosList();
   }
 
+
 }

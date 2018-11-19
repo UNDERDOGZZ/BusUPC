@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Ruta } from '../model/ruta';
 import { RutaService } from '../ruta.service';
+import { Horario } from '../model/horario';
 
 @Component({
   selector: 'app-list-ruta',
@@ -11,7 +12,7 @@ import { RutaService } from '../ruta.service';
 export class ListRutaComponent implements OnInit {
 
   rutas: Observable<Ruta[]>
-
+  ruta:Ruta=new Ruta;
   constructor(private rutaService: RutaService) { }
 
   ngOnInit() {
@@ -21,5 +22,11 @@ export class ListRutaComponent implements OnInit {
   reloadData(){
     this.rutas=this.rutaService.getRutasList();
   }
+
+  conseguirRuta(id:number){
+    this.rutaService.getRutaById(id).subscribe(data=>this.ruta=data);
+
+  }
+
 
 }

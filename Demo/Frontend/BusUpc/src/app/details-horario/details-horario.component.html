@@ -1,3 +1,17 @@
-<p>
-  details-horario works!
-</p>
+<div *ngIf="horario">
+  <div>
+    <label>Dia:</label>{{horario.dia}}
+  </div>
+
+  <div>
+    <label>Hora:</label>{{horario.hora}}
+  </div>
+
+  <div>
+    <label>Minuto:</label>{{horario.minuto}}
+  </div>
+
+  <div>
+    <label>Ruta:</label>{{horario.rutaId.id}}
+  </div>
+</div>
