@@ -20,6 +20,7 @@ export class CreateRutaComponent implements OnInit {
 
   save()
   {
+    this.sedeService.getSedeBySede(this.sede.nombre);
     this.rutaService.createRuta(this.ruta)
     .subscribe
     (data=>console.log(data),error=>console.log(error));
