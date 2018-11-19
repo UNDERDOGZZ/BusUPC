@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Ruta } from '../model/ruta';
 import { RutaService } from '../ruta.service';
+import { Sede } from '../model/sede';
+import { SedeService } from '../sede.service';
 
 @Component({
   selector: 'app-create-ruta',
@@ -10,7 +12,8 @@ import { RutaService } from '../ruta.service';
 export class CreateRutaComponent implements OnInit {
 
   ruta:Ruta = new Ruta();
-  constructor(private rutaService: RutaService) { }
+  sede: Sede = new Sede();
+  constructor(private rutaService: RutaService, private sedeService: SedeService) { }
 
   ngOnInit() {
   }
