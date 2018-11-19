@@ -1,9 +1,14 @@
 <div *ngIf="paradero">
   <div>
-    <label>Nombre:</label>{{paradero.nombre}}
+    <label>Nombre: </label>{{paradero.nombre}}
   </div>
   <div>
-    <label>Referencia:</label>{{paradero.referencia}}
+    <label>Referencia: </label>{{paradero.referencia}}
   </div>
+  <div>
+    <label>Ruta:  </label>{{paradero.ruta.id}}
+  </div>
+  <button (click) = "deleteParadero()"> Eliminar</button>
+
 </div>
  
